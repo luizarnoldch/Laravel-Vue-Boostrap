@@ -1,0 +1,50 @@
+-----Back-end-----
+# init laravel
+	#dependencia local
+	composer create-project laravel/laravel [nombre_proyecto] "(0-9).*"
+
+	#dependencia global
+	composer global require laravel/installer
+	laravel new [nombre_proyecto]
+
+# run service
+php artisan serve --port=4000
+
+#cofiguracion laravel
+app/AppServiceProvider.php
+
+	use Illuminate\Support\Facades\Schema;
+		public function boot()
+		    {
+ 		       Schema::defaultStringLength(191);
+ 		   }
+# .env configurar DB
+
+
+#configuracion vue
+npm i vue@2.6.12 vue-router@3.* vue-axios
+npm i
+npm run dev
+npm update vue-loader (en caso error npm run watch)
+npm i vue-template-compiler@2.6.12 (en aso de no leer template)
+
+#comando para crear migración a DB
+php artisan make:model Blog
+php artisan make:migration create_blogs_table
+php artisan migrate
+
+#comnado para crear controladores
+php artisan make:controller BlogController --resourcce
+
+# 2da forma migración y controlador
+php artisan make:model Blog --mcr (solo funciona en ingles)
+
+
+#creación de rutas
+php artisan route:list
+
+-----Front-end-----
+#ejecutar cambios en vue
+npm run watch
+
+
